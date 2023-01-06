@@ -1,6 +1,18 @@
 #<<BEGIN>>
 ggplot.hist.mc <- function(x, griddim = NULL, xlab = names(x),ylab = "Frequency", main = "",  ...)
-
+#Example:
+## data
+#conc <- mcstoc(rnorm,type="U",mean=10,sd=2)
+#cook <- mcstoc(rempiricalD, type="V",values=c(1,1/5,1/50), prob=c(0.027,0.373,0.600))
+#serving <- mcstoc(rgamma,type="V",shape=3.93,rate=0.0806)
+#expo <- conc * cook * serving
+#dose <- mcstoc(rpois,type="VU",lambda=expo)
+#r <- mcstoc(runif,type="U",min=0.0005,max=0.0015)
+#risk <- 1-(1-r)^dose
+#EC2 <- mc(conc,cook,serving,expo,dose,r,risk)
+	
+## ggplot
+#ggplot.mc(EC2)
 {
 # the function beau calculate a nice grid
 	beau <- function(n){
