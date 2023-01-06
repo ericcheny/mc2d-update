@@ -4,6 +4,25 @@
 #  use ggarange to typeset the plots
 #  additional use ggplot2 and ggpubr packages
 
+#Example 1:
+#data(total)
+#ggplot.mc(mc(xVUM3))
+#ggplot.mc(mc(xVUM3),stat="mean")
+#ggplot.mc(mc(xVUM3),paint=FALSE)
+#ggplot.mc(mc(xVUM3),lim=c(0.025, 0.975))
+
+#Example 2:
+#conc <- mcstoc(rnorm,type="U",mean=10,sd=2)
+#cook <- mcstoc(rempiricalD, type="V",values=c(1,1/5,1/50), prob=c(0.027,0.373,0.600))
+#serving <- mcstoc(rgamma,type="V",shape=3.93,rate=0.0806)
+#expo <- conc * cook * serving
+#dose <- mcstoc(rpois,type="VU",lambda=expo)
+#r <- mcstoc(runif,type="U",min=0.0005,max=0.0015)
+#risk <- 1-(1-r)^dose
+#EC2 <- mc(conc,cook,serving,expo,dose,r,risk)
+#ggplot.mc(EC2)
+
+
 ggplot.mc <- function(x, prec=0.001, 
                     stat = c("median","mean"), 
                     lim = c(0.025, 0.25, 0.75, 0.975), 
